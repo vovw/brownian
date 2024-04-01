@@ -14,7 +14,7 @@ INITIAL_DIRECTION = 0
 STEP_SIZE = 0.1
 ROTATION_RANGE = (0, 2 * math.pi)
 
-class Brownian:
+class BrownianMotion:
     def __init__(self):
         self.x = INITIAL_X
         self.y = INITIAL_Y
@@ -54,9 +54,3 @@ def vis_sim(positions):
         return line,
     ani = animation.FuncAnimation(fig, animate, frames=len(positions), interval=50, blit=True)
     plt.show()
-
-if __name__ == "__main__":
-    # defines and uses the robot object
-    robot = Brownian()
-    positions = robot.simulate(1000)
-    vis_sim(positions)
